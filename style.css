@@ -1,0 +1,23 @@
+.headerselector {
+    font-family: 'DatalegreyaGradient';
+    font-size: 1.2vw;
+    font-weight: 550;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.header {
+    font-family: 'DatalegreyaGradient';
+    font-size: 3.2vw;
+    font-weight: 550;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.titlefont {
+    font-family: 'DatalegreyaGradient';
+    font-size: 2.2vw;
+    font-weight: 550;
+    vertical-align: middle;
+    text-align: center;
+}
