@@ -1,23 +1,37 @@
 
 
 
-
 function quizTime() {
 var startscreen = document.getElementById("startscreen");
 startscreen.setAttribute("id", "hide");
 
-var startquiz = document.getElementById(startquiz)
-startquiz.removeAttribute("id", "hide");
 
 
+startQuestions();
+};
 
-var timer = document.getElementById("timer");
-timer = questions.length * 10
+function startQuestions() {
+var startquiz = document.getElementById("hiddenquestions")
+startquiz.removeAttribute("id");
 
+startTimer()
+}
+
+function startTimer() {
+let timer = document.getElementById("timer")
+let timeRemaining = 60
+let timerstart = setInterval(function() {
+timeRemaining--;
+timer.textContent = timeRemaining;
+
+if(timeRemaining === 0) {
+    clearInterval(timerstart);
+    gameOver();
 }
 
 
-
+}, 1000)
+}
 
 var questions = [
   { 
@@ -60,3 +74,6 @@ var questions = [
 
 
 
+function gameOver() {
+    console.log("game over")
+}
