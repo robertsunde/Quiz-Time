@@ -137,8 +137,27 @@ function questiontwo() {
 hideone.setAttribute("id", "hide")
     var questiontwo = document.getElementById("hiddenquestions2")
     questiontwo.removeAttribute("id");
+}
 
+function questionthree() {
+    var hidetwo = document.getElementById("next2");
+hidetwo.setAttribute("id", "hide")
+    var questionthree = document.getElementById("hiddenquestions3")
+    questionthree.removeAttribute("id");
+}
 
+function questionfour() {
+    var hidethree = document.getElementById("next3");
+hidethree.setAttribute("id", "hide")
+    var questionfour = document.getElementById("hiddenquestions4")
+    questionfour.removeAttribute("id");
+}
+
+function questionfive() {
+    var hidethree = document.getElementById("next3");
+hidethree.setAttribute("id", "hide")
+    var questionfour = document.getElementById("hiddenquestions4")
+    questionfour.removeAttribute("id");
 }
 
 
