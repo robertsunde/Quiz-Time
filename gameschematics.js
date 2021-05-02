@@ -6,7 +6,7 @@ function quizTime() {
 var startscreen = document.getElementById("startscreen");
 startscreen.setAttribute("id", "hide");
 
-console.log(questions)
+
 
 startQuestions();
 };
@@ -59,12 +59,81 @@ if(timeRemaining === 0) {
 
 function rightone() {
     console.log("win")
+    questiontwo()
 }
 
 function wrongone() {
     console.log("lose")
     timeRemaining -= 7
+    questiontwo()
 }
+
+function righttwo() {
+    console.log("win")
+    questionthree()
+}
+
+function wrongtwo() {
+    console.log("lose")
+    timeRemaining -= 7
+    questionthree()
+}
+
+function rightthree() {
+    console.log("win")
+    questionfour()
+}
+
+function wrongthree() {
+    console.log("lose")
+    timeRemaining -= 7
+    questionfour()
+}
+
+function rightfour() {
+    console.log("win")
+    questionfive()
+}
+
+function wrongfour() {
+    console.log("lose")
+    timeRemaining -= 7
+    questionfive()
+}
+
+function rightfive() {
+    console.log("win")
+    questionsix()
+}
+
+function wrongfive() {
+    console.log("lose")
+    timeRemaining -= 7
+    questionsix()
+}
+
+function rightsix() {
+    console.log("win")
+    gameOver()
+}
+
+function wrongone() {
+    console.log("lose")
+    timeRemaining -= 7
+    gameOver()
+}
+
+function questiontwo() {
+    var hideone = document.getElementById("hiddenquestions");
+hideone.setAttribute("id", "hidden");
+    var questiontwo = document.getElementById("hiddenquestions2")
+    questiontwo.removeAttribute("id");
+
+
+}
+
+
+
 
 function gameOver() {
     console.log("game over")
