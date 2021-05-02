@@ -15,6 +15,9 @@ function startQuestions() {
 
 var startquiz = document.getElementById("hiddenquestions")
 startquiz.removeAttribute("id");
+
+
+
 // var questionText = document.getElementById("questionText");
 // questionText.textContent = questions[0].title;
 
@@ -33,8 +36,9 @@ startquiz.removeAttribute("id");
 
 
 
-// questionone()
+
 startTimer()
+questionone()
 }
 
 
@@ -123,9 +127,14 @@ function wrongone() {
     gameOver()
 }
 
+function questionone() {
+var startq = document.getElementById("hide1")
+startq.removeAttribute("id");
+}
+
 function questiontwo() {
-    var hideone = document.getElementById("hiddenquestions");
-hideone.setAttribute("id", "hidden");
+    var hideone = document.getElementById("next1");
+hideone.setAttribute("id", "hide")
     var questiontwo = document.getElementById("hiddenquestions2")
     questiontwo.removeAttribute("id");
 

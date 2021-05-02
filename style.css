@@ -63,11 +63,19 @@
     display: none;
 }
 
+#hide1 {
+    display: none;
+}
+
 #hidden {
     display: none;
 }
 
 #hiddenquestions {
+    display: none;
+}
+
+#hiddenquestions1 {
     display: none;
 }
 
