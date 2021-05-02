@@ -1,44 +1,5 @@
 // var firstQuestion = questions[0];
 let timeRemaining = 60
-var questions = [
-
-    { 
-      title: "How do you reference your JavaScript page in your html file?:",
-      options: ["<script src=filenamehere></script>", "<link rel= href=filenamehere>", "You don't need to!", "./filenamehere"],
-      answer: "<script src=filenamehere></script>"
-    },
-  
-    {
-      title: "How do you begin a for loop?",
-      options: ["i=1-9", "(0<i<9)", "(i=0;i<9;i++)", "i++=i<9"],
-      answer: "(i=0;i<9;i++)"
-    },
-  
-    {
-      title: "How do you create a comment in JavaScript?",
-      options: ["//comment here", "<!--comment here-->", "|comment here|", " /comment here\ "],
-      answer: "//comment here"
-    },
-  
-    {
-      title: "Does JavaScript depend on case sensitive language",
-      options: ["Yes", "No", "Only on Tuesdays", "Definitely not"],
-      answer: "Yes"
-    },
-  
-    {
-      title: "Which came first, JavaScript or Java?",
-      options: ["Discovering water on Mars", "Java", "The chicken", "JavaScript"],
-      answer: "Java"
-    },
-  
-    {
-      title: "Which HTML element is used to insert JavaScript?",
-      options: ["<style>", "<main>", "<header>", "<script>"],
-      answer: "<script>"
-    },
-  
-  ]
   
 
 function quizTime() {
