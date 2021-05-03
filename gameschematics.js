@@ -118,13 +118,13 @@ function wrongfive() {
 
 function rightsix() {
     console.log("win")
-    gameOver()
+    highscores()
 }
 
-function wrongone() {
+function wrongsix() {
     console.log("lose")
     timeRemaining -= 7
-    gameOver()
+    highscores()
 }
 
 function questionone() {
@@ -154,10 +154,24 @@ hidethree.setAttribute("id", "hide")
 }
 
 function questionfive() {
-    var hidethree = document.getElementById("next3");
-hidethree.setAttribute("id", "hide")
-    var questionfour = document.getElementById("hiddenquestions4")
-    questionfour.removeAttribute("id");
+    var hidefour = document.getElementById("next4");
+hidefour.setAttribute("id", "hide")
+    var questionfive = document.getElementById("hiddenquestions5")
+    questionfive.removeAttribute("id");
+}
+
+function questionsix() {
+    var hidefive = document.getElementById("next5");
+hidefive.setAttribute("id", "hide")
+    var questionfive = document.getElementById("hiddenquestions6")
+    questionfive.removeAttribute("id");
+}
+
+function highscores() {
+    var hidesix = document.getElementById("next6");
+hidesix.setAttribute("id", "hide")
+    var highscore = document.getElementById("highscores")
+    highscore.removeAttribute("id");
 }
 
 
