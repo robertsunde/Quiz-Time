@@ -16,29 +16,9 @@ function startQuestions() {
 var startquiz = document.getElementById("hiddenquestions")
 startquiz.removeAttribute("id");
 
-
-
-// var questionText = document.getElementById("questionText");
-// questionText.textContent = questions[0].title;
-
-// var option1Text = document.getElementById("option1");
-// option1Text.textContent = questions[0].options[0];
-
-// var option2Text = document.getElementById("option2");
-// option2Text.textContent = questions[0].options[1];
-
-// var option3Text = document.getElementById("option3");
-// option3Text.textContent = questions[0].options[2];
-
-// var option4Text = document.getElementById("option4");
-// option4Text.textContent = questions[0].options[3];
-
-
-
-
-
 startTimer()
 questionone()
+printHighscores()
 }
 
 
@@ -172,7 +152,55 @@ function highscores() {
 hidesix.setAttribute("id", "hide")
     var highscore = document.getElementById("highscores")
     highscore.removeAttribute("id");
+
+    
 }
+
+
+function savescore() {
+    var initials = document.getElementById("nickname").value.trim();
+    // determine whether characters were entered
+    if (initials !== "") {
+      // show high scores from local
+      var highscores =
+        JSON.parse(window.localStorage.getItem("highscorelist")) || [];
+      // create new score storage for new user
+      var newScore = {
+        score: timeRemaining,
+        initials: initials
+      };
+      // save highscores
+      highscores.push(newScore);
+      window.localStorage.setItem("highscorelist", JSON.stringify(highscores));
+      
+      window.location.href = "mainpage.html";
+
+}}
+
+
+function printHighscores () {
+  
+    // either get scores from localstorage or set to empty array
+    var highscoreshow = JSON.parse(window.localStorage.getItem("highscorelist")) || [];
+    // sort highscores by score property in descending order
+    highscoreshow.sort(function(a, b) {
+      return b.score - a.score;
+    });
+    highscoreshow.forEach(function(score) {
+      // create li tag for each high score
+      var liTag = document.createElement("li");
+      liTag.textContent = score.initials + " - " + score.score;
+      // display on page
+      var olEl = document.getElementById("highscorelist");
+      olEl.appendChild(liTag);
+    });
+  }
+
+
+
+
+
+
 
 
 

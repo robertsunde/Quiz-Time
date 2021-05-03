@@ -259,7 +259,15 @@
     <div class="row">
     <div class="col-3"></div>
     <div class="col-6 titlefont">
-    <ol class="highscores"></ol>    
+    <ol id="highscorelist"></ol>    
+    </div>
+    <div class="col-3"></div>
+    </div>
+
+    <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 titlefont"><input id="nickname" type="text"> 
+      
     </div>
     <div class="col-3"></div>
     </div>
@@ -268,6 +276,7 @@
     <div class="row">
     <div class="col-4"></div>    
     <div class="col-4" style="text-align: center; margin-top: 1vh;">
+    <button id="savescore" class="btn btn-dark tryagainbutton" onclick="savescore()">Save Score</a></button>
     <button class="btn btn-dark tryagainbutton"><a class="tryagainbutton" href="./mainpage.html">Try Again</a></button>
     </div>     
     <div class="col-4"></div>    
