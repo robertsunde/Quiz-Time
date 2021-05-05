@@ -45,6 +45,7 @@
     font-weight: 600;
     vertical-align: middle;
     text-align: center;
+
 }
 
 .tryagainbutton {
@@ -103,10 +104,26 @@
     display: none;
 }
 
+#gameover {
+    display: none;
+}
+
 .optionscss {
     font-family: 'DatalegreyaGradient';
     font-size: 2.2vw;
     font-weight: 600;
     vertical-align: middle;
     text-align: center;
+}
+
+.btn {
+height: 2.4cm;
+width: 5cm;
+margin: .25cm;
+padding: .25cm;
+}
+
+#highscorelist {
+
+    padding: 0;
 }

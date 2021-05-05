@@ -1,9 +1,9 @@
-// var firstQuestion = questions[0];
-let timeRemaining = 60
-  
+// let firstQuestion = questions[0];
+let timeLeft = 60
+
 
 function quizTime() {
-var startscreen = document.getElementById("startscreen");
+let startscreen = document.getElementById("startscreen");
 startscreen.setAttribute("id", "hide");
 
 
@@ -13,7 +13,7 @@ startQuestions();
 
 function startQuestions() {
 
-var startquiz = document.getElementById("hiddenquestions")
+let startquiz = document.getElementById("hiddenquestions")
 startquiz.removeAttribute("id");
 
 startTimer()
@@ -28,10 +28,10 @@ function startTimer() {
 let timer = document.getElementById("timer")
 
 let timerstart = setInterval(function() {
-timeRemaining--;
-timer.textContent = timeRemaining;
+timeLeft--;
+timer.textContent = timeLeft;
 
-if(timeRemaining === 0) {
+if(timeLeft <= 0) {
     clearInterval(timerstart);
     gameOver();
 }
@@ -48,7 +48,7 @@ function rightone() {
 
 function wrongone() {
     console.log("lose")
-    timeRemaining -= 7
+    timeLeft -= 7
     questiontwo()
 }
 
@@ -59,7 +59,7 @@ function righttwo() {
 
 function wrongtwo() {
     console.log("lose")
-    timeRemaining -= 7
+    timeLeft -= 7
     questionthree()
 }
 
@@ -70,7 +70,7 @@ function rightthree() {
 
 function wrongthree() {
     console.log("lose")
-    timeRemaining -= 7
+    timeLeft -= 7
     questionfour()
 }
 
@@ -81,7 +81,7 @@ function rightfour() {
 
 function wrongfour() {
     console.log("lose")
-    timeRemaining -= 7
+    timeLeft -= 7
     questionfive()
 }
 
@@ -92,7 +92,7 @@ function rightfive() {
 
 function wrongfive() {
     console.log("lose")
-    timeRemaining -= 7
+    timeLeft -= 7 
     questionsix()
 }
 
@@ -103,108 +103,123 @@ function rightsix() {
 
 function wrongsix() {
     console.log("lose")
-    timeRemaining -= 7
+    timeLeft -= 7
     highscores()
 }
 
 function questionone() {
-var startq = document.getElementById("hide1")
+let startq = document.getElementById("hide1")
 startq.removeAttribute("id");
 }
 
 function questiontwo() {
-    var hideone = document.getElementById("next1");
+    let hideone = document.getElementById("next1");
 hideone.setAttribute("id", "hide")
-    var questiontwo = document.getElementById("hiddenquestions2")
+    let questiontwo = document.getElementById("hiddenquestions2")
     questiontwo.removeAttribute("id");
 }
 
 function questionthree() {
-    var hidetwo = document.getElementById("next2");
+    let hidetwo = document.getElementById("next2");
 hidetwo.setAttribute("id", "hide")
-    var questionthree = document.getElementById("hiddenquestions3")
+    let questionthree = document.getElementById("hiddenquestions3")
     questionthree.removeAttribute("id");
 }
 
 function questionfour() {
-    var hidethree = document.getElementById("next3");
+    let hidethree = document.getElementById("next3");
 hidethree.setAttribute("id", "hide")
-    var questionfour = document.getElementById("hiddenquestions4")
+    let questionfour = document.getElementById("hiddenquestions4")
     questionfour.removeAttribute("id");
 }
 
 function questionfive() {
-    var hidefour = document.getElementById("next4");
+    let hidefour = document.getElementById("next4");
 hidefour.setAttribute("id", "hide")
-    var questionfive = document.getElementById("hiddenquestions5")
+    let questionfive = document.getElementById("hiddenquestions5")
     questionfive.removeAttribute("id");
 }
 
 function questionsix() {
-    var hidefive = document.getElementById("next5");
+    let hidefive = document.getElementById("next5");
 hidefive.setAttribute("id", "hide")
-    var questionfive = document.getElementById("hiddenquestions6")
+    let questionfive = document.getElementById("hiddenquestions6")
     questionfive.removeAttribute("id");
 }
 
 function highscores() {
-    var hidesix = document.getElementById("next6");
-hidesix.setAttribute("id", "hide")
-    var highscore = document.getElementById("highscores")
+    let hidesix = document.getElementById("next6");
+    hidesix.setAttribute("id", "hide")
+    let hidesi = document.getElementById("finalscreen");
+    hidesi.setAttribute("id", "hide")
+    let highscore = document.getElementById("highscores")
     highscore.removeAttribute("id");
 
     
 }
 
 
+////////////////////////////////////////////////////////
+/// FUNCTION TO SAVE SCORE ON BUTTON CLICK
+////////////////////////////////////////////////////////
+
 function savescore() {
-    var initials = document.getElementById("nickname").value.trim();
-    // determine whether characters were entered
-    if (initials !== "") {
-      // show high scores from local
-      var highscores =
+
+    let nickname = document.getElementById("nickname").value.trim();
+    if (nickname !== "") {
+      let highscores =
         JSON.parse(window.localStorage.getItem("highscorelist")) || [];
-      // create new score storage for new user
-      var newScore = {
-        score: timeRemaining,
-        initials: initials
+      let newScore = {
+        score: timeLeft,
+        nickname: nickname
       };
-      // save highscores
       highscores.push(newScore);
       window.localStorage.setItem("highscorelist", JSON.stringify(highscores));
-      
       window.location.href = "mainpage.html";
-
+        
 }}
 
+function savedscorespage() {
+    let startscreen = document.getElementById("startscreen");
+      startscreen.setAttribute("id", "hide");
+      highscores()
+      printHighscores()
+
+}
+
+
+////////////////////////////////////////////////////////
+/// CREATES LIST OF HIGH SCORES ON PAGE LOAD
+////////////////////////////////////////////////////////
 
 function printHighscores () {
-  
-    // either get scores from localstorage or set to empty array
-    var highscoreshow = JSON.parse(window.localStorage.getItem("highscorelist")) || [];
-    // sort highscores by score property in descending order
-    highscoreshow.sort(function(a, b) {
-      return b.score - a.score;
-    });
+    
+    let highscoreshow = JSON.parse(window.localStorage.getItem("highscorelist")) || [];
+
     highscoreshow.forEach(function(score) {
-      // create li tag for each high score
-      var liTag = document.createElement("li");
-      liTag.textContent = score.initials + " - " + score.score;
-      // display on page
-      var olEl = document.getElementById("highscorelist");
-      olEl.appendChild(liTag);
+      let divappend = document.createElement("div");
+      divappend.textContent = score.nickname + " " + " " + " " + score.score;
+      let mainlist = document.getElementById("highscorelist");
+      mainlist.appendChild(divappend);
     });
   }
 
 
 
-
-
-
-
-
-
-
 function gameOver() {
     console.log("game over")
+    let timerstart = setInterval(function() {
+        timeLeft--;
+        timer.textContent = timeLeft;
+        
+        if(timeLeft <= 0) {
+            clearInterval(timerstart);
+        }})
+
+        let hideany = document.getElementById("any");
+        hideany.setAttribute("id", "hide")
+        let gameover = document.getElementById("gameover")
+        gameover.removeAttribute("id");
+
+
 }

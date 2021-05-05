@@ -12,10 +12,13 @@
 <body>
 
 
+<div id="any">
+
+
    <!--Contains Start Screen info that will hide upon starting quiz  -->
 <div id="startscreen">
  <div class="row">
-<div class="col-2 headerselector"><a class=" headerselector" href="./highscores.html">View Hall of Fame</a></div>
+<div class="col-2 headerselector"><a class=" headerselector" onclick="savedscorespage()">View Hall of Fame</a></div>
 <div class="col-8"></div>
 <div class="col-2 headerselector">Time Remaining <div class="timer"></div></div>
  </div>
@@ -28,7 +31,7 @@
 
  <div class="row">
  <div class="col-3"></div>
- <div class="col-6 titlefont"> Welcome to Quiz Time! The online quiz game testing your skills on JavaScript. You will be asked a total of 6 multiple choice questions. Upon starting, you will be given a total of 1 minute and 30 seconds to answer them all. For every incorrect answer, 7 seconds will be subtracted from your total time. Upon completion you will be prompted to enter your name into the High Scores if you score high enough.</div>
+ <div class="col-6 titlefont"> Welcome to Quiz Time! The online quiz game testing your skills on JavaScript. You will be asked a total of 6 multiple choice questions. Upon starting, you will be given a total of 60 seconds to answer them all. For every incorrect answer, 7 seconds will be subtracted from your total time. Upon completion you will be prompted to enter your name into the High Scores if you score high enough.</div>
  <div class="col-3"></div>
  </div>
 
@@ -45,7 +48,7 @@
 
    <!--Contains Start Screen info that will hide upon starting quiz  -->
 <div id="hiddenquestions" class="start">
- <div class="row">
+ <div id="finalscreen" class="row">
 <div class="col-2 headerselector"><a class=" headerselector" href="./highscores.html">View Hall of Fame</a></div>
 <div class="col-8"></div>
 <div class="col-2 headerselector">Time Remaining <div id="timer"></div></div>
@@ -94,7 +97,7 @@
 
  <div class="row">
  <div class="col-3"></div>
- <div id = "questionText" class="col-6 titlefont">How do you begin a for loop?</div>
+ <div id = "questionText" class="col-6 titlefont">How do you begin a "for" loop?</div>
  <div class="col-3"></div>
  </div>
 
@@ -225,7 +228,7 @@
  <div class="row">
 <div class="col-4"></div>
  <div class="col-2 optionscss"><button onclick="wrongsix()" id="option1" class="btn-dark btn">&lt;style&gt;</button></div>
- <div class="col-2 optionscss"><button onclick="wrongsix()" id="option2" class="btn-dark btn">%lt;main&gt;</button></div>
+ <div class="col-2 optionscss"><button onclick="wrongsix()" id="option2" class="btn-dark btn">&lt;main&gt;</button></div>
  <div class="col-4"></div>
  </div>
 
@@ -277,6 +280,54 @@
     <div class="col-4"></div>    
     <div class="col-4" style="text-align: center; margin-top: 1vh;">
     <button id="savescore" class="btn btn-dark tryagainbutton" onclick="savescore()">Save Score</a></button>
+    <button class="btn btn-dark tryagainbutton"><a class="tryagainbutton" href="./mainpage.html">Try Again</a></button>
+    </div>     
+    <div class="col-4"></div>    
+      
+    </div>
+   </div>
+
+
+
+
+
+
+</div>
+
+<!-- GAME OVER -->
+<div id="gameover">
+<div class="row">
+   <div class="col-2"></div>
+   <div class="col-8"></div>
+   <div class="col-2"></div>
+    </div>
+   
+    <div class="row">
+    <div class="col-12 halloffameheader"> GAME OVER</div>
+    </div>
+   
+   
+   
+    <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 titlefont">
+    <ol id="highscorelist"></ol>    
+    </div>
+    <div class="col-3"></div>
+    </div>
+
+    <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 titlefont">
+      
+    </div>
+    <div class="col-3"></div>
+    </div>
+   
+   
+    <div class="row">
+    <div class="col-4"></div>    
+    <div class="col-4" style="text-align: center; margin-top: 1vh;">
     <button class="btn btn-dark tryagainbutton"><a class="tryagainbutton" href="./mainpage.html">Try Again</a></button>
     </div>     
     <div class="col-4"></div>    
