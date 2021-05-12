@@ -122,6 +122,75 @@ function wrongsix() {
 
 
 
+////////////////////////////////////////////////////////
+/// FUNCTION TO SAVE SCORE ON BUTTON CLICK
+////////////////////////////////////////////////////////
+
+function savescore() {
+
+    let nickname = document.getElementById("nickname").value.trim();
+    if (nickname !== "") {
+      let highscores = JSON.parse(window.localStorage.getItem("highscorelist")) || [];
+      let newScore = {
+        score: timeLeft,
+        nickname: nickname
+      };
+      highscores.push(newScore);
+      window.localStorage.setItem("highscorelist", JSON.stringify(highscores));
+      window.location.href = "mainpage.html";
+        
+}}
+
+function savedscorespage() {
+    let startscreen = document.getElementById("startscreen");
+      startscreen.setAttribute("id", "hide");
+      highscores()
+      printHighscores()
+
+}
+
+
+////////////////////////////////////////////////////////
+/// CREATES LIST OF HIGH SCORES ON PAGE LOAD
+////////////////////////////////////////////////////////
+
+function printHighscores () {
+    
+    let highscoreshow = JSON.parse(window.localStorage.getItem("highscorelist")) || [];
+
+    highscoreshow.forEach(function(score) {
+      let divappend = document.createElement("div");
+      let mainlist = document.getElementById("highscorelist");
+      divappend.textContent = score.nickname + " " + " " + " " + score.score;
+      mainlist.appendChild(divappend);
+    });
+  }
+
+
+////////////////////////////////////////////////////////////////////////
+/// ENDS GAME IF PLAYER RUNS OUT OF TIME AND DISPLAYS "GAME OVER" TEXT
+////////////////////////////////////////////////////////////////////////
+
+function gameOver() {
+    console.log("game over")
+    let timerstart = setInterval(function() {
+        timeLeft--;
+        timer.textContent = timeLeft;
+        
+        if(timeLeft <= 0) {
+            clearInterval(timerstart);
+        }})
+
+        let hideany = document.getElementById("any");
+        hideany.setAttribute("id", "hide")
+        let gameover = document.getElementById("gameover")
+        gameover.removeAttribute("id");
+
+
+}
+
+
+
 ///////////////////////////////////////////////////////////////////////////////
 /// FUNCTIONS THAT HIDE AND SHOW THE QUESTIONS IN ORDER AS THE QUIZ IS TAKEN
 ///////////////////////////////////////////////////////////////////////////////
@@ -179,70 +248,3 @@ function highscores() {
 }
 
 
-////////////////////////////////////////////////////////
-/// FUNCTION TO SAVE SCORE ON BUTTON CLICK
-////////////////////////////////////////////////////////
-
-function savescore() {
-
-    let nickname = document.getElementById("nickname").value.trim();
-    if (nickname !== "") {
-      let highscores =
-        JSON.parse(window.localStorage.getItem("highscorelist")) || [];
-      let newScore = {
-        score: timeLeft,
-        nickname: nickname
-      };
-      highscores.push(newScore);
-      window.localStorage.setItem("highscorelist", JSON.stringify(highscores));
-      window.location.href = "mainpage.html";
-        
-}}
-
-function savedscorespage() {
-    let startscreen = document.getElementById("startscreen");
-      startscreen.setAttribute("id", "hide");
-      highscores()
-      printHighscores()
-
-}
-
-
-////////////////////////////////////////////////////////
-/// CREATES LIST OF HIGH SCORES ON PAGE LOAD
-////////////////////////////////////////////////////////
-
-function printHighscores () {
-    
-    let highscoreshow = JSON.parse(window.localStorage.getItem("highscorelist")) || [];
-
-    highscoreshow.forEach(function(score) {
-      let divappend = document.createElement("div");
-      divappend.textContent = score.nickname + " " + " " + " " + score.score;
-      let mainlist = document.getElementById("highscorelist");
-      mainlist.appendChild(divappend);
-    });
-  }
-
-
-////////////////////////////////////////////////////////////////////////
-/// ENDS GAME IF PLAYER RUNS OUT OF TIME AND DISPLAYS "GAME OVER" TEXT
-////////////////////////////////////////////////////////////////////////
-
-function gameOver() {
-    console.log("game over")
-    let timerstart = setInterval(function() {
-        timeLeft--;
-        timer.textContent = timeLeft;
-        
-        if(timeLeft <= 0) {
-            clearInterval(timerstart);
-        }})
-
-        let hideany = document.getElementById("any");
-        hideany.setAttribute("id", "hide")
-        let gameover = document.getElementById("gameover")
-        gameover.removeAttribute("id");
-
-
-}
