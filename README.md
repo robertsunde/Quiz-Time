@@ -17,7 +17,7 @@ This is a web-based JavaScript quiz that asks the user 6 questions while being t
 <br/>
 <br/>
 ## Installation <br/>
-No installation is needed, the application can be reached at the following site.  <br/>
+No installation is needed, the application can be reached at the following site: https://robertsunde.github.io/Quiz-Time/  <br/>
 <br/>
 <br/>
 ## Usage <br/>
