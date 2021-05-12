@@ -137,7 +137,7 @@ function savescore() {
       };
       highscores.push(newScore);
       window.localStorage.setItem("highscorelist", JSON.stringify(highscores));
-      window.location.href = "mainpage.html";
+      window.location.href = "index.html";
         
 }}
 
