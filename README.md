@@ -21,7 +21,13 @@ No installation is needed, the application can be reached at the following site:
 <br/>
 <br/>
 ## Usage <br/>
-To use, visit the site listed above under Installation. From here the user will be greeted with the following screen. Click start to begin Quiz Time. The user will be asked 6 questions related to JavaScript. Click the answer to each question to progress. If the wrong answer is clicked, 7 seconds will be subtracted from the time located in the top right corner of the screen. Should the user reach 0 seconds, the game will end. Should the user complete the quiz with time remaining, they will be asked to enter their name into the hall of fame as shown below. From here, the user may try again or view the hall of fame. Thank you for playing! <br/>
+To use, visit the site listed above under Installation. From here the user will be greeted with the following screen. <br/>
+![image](https://user-images.githubusercontent.com/73792987/117903872-57a5e980-b29e-11eb-8dbd-3a520f4c01aa.png)<br/>
+Click start to begin Quiz Time. The user will be asked 6 questions related to JavaScript. Click the answer to each question to progress. If the wrong answer is clicked, 7 seconds will be subtracted from the time located in the top right corner of the screen. Should the user reach 0 seconds, the game will end. <br/>
+![image](https://user-images.githubusercontent.com/73792987/117903883-5d033400-b29e-11eb-9d11-3c5b80c76684.png)<br/>
+ Should the user complete the quiz with time remaining, they will be asked to enter their name into the hall of fame as shown below. From here, the user may try again or view the hall of fame.<br/>
+ ![image](https://user-images.githubusercontent.com/73792987/117903931-71473100-b29e-11eb-8c74-507cd672757f.png)<br/>
+  Thank you for playing! <br/>
 <br/>
 <br/>
 ## License <br/>
